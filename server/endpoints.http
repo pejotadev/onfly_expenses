@@ -1,0 +1,27 @@
+@url = http://127.0.0.1:8000
+@token = 1|LvWE7IItePB10bEkjXncAHhcllibTU3e3BWNmE6k6840e993
+### Health Check
+get {{url}}/api/health
+
+### Post User
+post {{url}}/api/user
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john@doe.com",
+    "password": "123456"
+}
+
+### Get auth
+post {{url}}/api/login
+Content-Type: application/json
+
+{
+    "email": "john@doe.com",
+    "password": "123456"
+}
+
+### Get User
+get {{url}}/api/user
+Authorization: Bearer {{token}}
