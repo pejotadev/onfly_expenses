@@ -13,9 +13,13 @@ class UserController extends Controller
         return User::all();
     }
 
-    public function show($id)
+    public function show(Request $request)
     {
-        return User::find($id);
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        $user->expenses;
+
+        return $user;
     }
 
     public function store(Request $request)
