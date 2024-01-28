@@ -9,6 +9,9 @@ use Tests\TestCase;
 class UserTest extends TestCase
 {
     private $token;
+    private $email = 'emailteste@email.com';
+    private $password = '123456';
+
     /**
      *  Create user test.
      */
@@ -16,12 +19,11 @@ class UserTest extends TestCase
     {
         $response = $this->postJson('/api/register', [
             'name' => 'Teste',
-            'email' => 'emailteste@email.com',
-            'password' => '123456'
+            'email' => $this->email,
+            'password' => $this->password
         ]);
 
         $response->assertStatus(201);
-
     }
 
     /**
@@ -30,8 +32,8 @@ class UserTest extends TestCase
     public function test_get_auth(): void
     {
         $response = $this->postJson('/api/login', [
-            'email' => 'emailteste@email.com',
-            'password' => '123456'
+            'email' => $this->email,
+            'password' => $this->password
         ]);
 
         $response->assertStatus(200);
@@ -39,7 +41,6 @@ class UserTest extends TestCase
         $response = json_decode($response->getContent());
 
         $this->token = $response->token;
-
     }
 
     /**
@@ -54,7 +55,6 @@ class UserTest extends TestCase
         ]);
 
         $response->assertStatus(200);
-
     }
 
     /**
