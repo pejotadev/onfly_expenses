@@ -9,12 +9,11 @@ Route::post('/register', 'App\Http\Controllers\AuthController@register');
 Route::post('/login', 'App\Http\Controllers\AuthController@login');
 
 // USER ROUTES
-
+Route::middleware('auth:sanctum')
+    ->apiResource('user', 'App\Http\Controllers\UserController')
+    ->except(['destroy']);
 
 Route::middleware('auth:sanctum')->delete('/user', 'App\Http\Controllers\UserController@destroy');
-Route::middleware('auth:sanctum')->get('/users', 'App\Http\Controllers\UserController@index');
-Route::middleware('auth:sanctum')->get('/user', 'App\Http\Controllers\UserController@show');
-
 
 
 // EXPENSES ROUTES
