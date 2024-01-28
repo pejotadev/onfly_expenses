@@ -11,11 +11,7 @@ class createUserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        if(auth()->user()){
-            return true;
-        } else {
-            return false;
-       }
+        return true;
     }
 
     /**
