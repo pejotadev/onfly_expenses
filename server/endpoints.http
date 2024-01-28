@@ -2,9 +2,12 @@
 @token = 6|vftpkXeON6zcqiYHbaDEye4PGKPqif7qD9LLZv0973d4a515
 ### Health Check
 get {{url}}/api/health
+Accept: application/json
+Content-Type: application/json
 
 ### Post User
 post {{url}}/api/user
+Accept: application/json
 Content-Type: application/json
 
 {
@@ -15,6 +18,7 @@ Content-Type: application/json
 
 ### Get auth
 post {{url}}/api/login
+Accept: application/json
 Content-Type: application/json
 
 {
@@ -24,6 +28,8 @@ Content-Type: application/json
 
 ### Get User
 get {{url}}/api/user
+Accept: application/json
+Content-Type: application/json
 Authorization: Bearer {{token}}
 
 
@@ -34,7 +40,7 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-    "description": "Expense test email",
+    "description": "Expense test request",
     "value": 150,
     "date": "2024-01-27",
     "type": "fly"
