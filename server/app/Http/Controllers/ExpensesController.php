@@ -37,6 +37,6 @@ class ExpensesController extends Controller
 
         return response()->json([
             'expense' => $expense
-        ]);
+        ], 201);
     }
 }

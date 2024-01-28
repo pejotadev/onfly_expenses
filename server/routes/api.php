@@ -15,11 +15,9 @@ Route::middleware('auth:sanctum')
 
 Route::middleware('auth:sanctum')->delete('/user', 'App\Http\Controllers\UserController@destroy');
 
-
 // EXPENSES ROUTES
-
-Route::middleware('auth:sanctum')->post('/expenses', ExpensesController::class . '@store');
-Route::middleware('auth:sanctum')->get('/expenses', ExpensesController::class . '@index');
+Route::middleware('auth:sanctum')
+    ->apiResource('expenses', 'App\Http\Controllers\ExpensesController');
 
 
 // AUTH ROUTES
