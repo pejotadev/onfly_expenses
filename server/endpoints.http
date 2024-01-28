@@ -1,5 +1,5 @@
 @url = http://127.0.0.1:8000
-@token = 1|LvWE7IItePB10bEkjXncAHhcllibTU3e3BWNmE6k6840e993
+@token = 6|vftpkXeON6zcqiYHbaDEye4PGKPqif7qD9LLZv0973d4a515
 ### Health Check
 get {{url}}/api/health
 
@@ -24,4 +24,22 @@ Content-Type: application/json
 
 ### Get User
 get {{url}}/api/user
+Authorization: Bearer {{token}}
+
+
+### Post Expense
+post {{url}}/api/expenses
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "description": "Expense test email",
+    "value": 150,
+    "date": "2024-01-27",
+    "type": "fly"
+}
+
+### get Expense
+get {{url}}/api/expenses
 Authorization: Bearer {{token}}
