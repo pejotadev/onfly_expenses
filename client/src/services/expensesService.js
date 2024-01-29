@@ -9,6 +9,14 @@ export default {
     } catch (error) {
       throw error;
     }
+  },
+
+  async deleteExpense(expenseId) {
+    try {
+      await axiosInstance.delete(`/expenses/${expenseId}`);
+    } catch (error) {
+      throw error;
+    }
   }
-  // Outras operações de usuário
+
 }

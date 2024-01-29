@@ -74,4 +74,23 @@ class ExpensesController extends Controller
             'message' => 'Expense not found'
         ], 404);
     }
+
+    public function destroy($id)
+    {
+        $expense = Expenses::find($id);
+
+        $this->authorize('delete', $expense);
+
+        if ($expense) {
+            $expense->delete();
+
+            return response()->json([
+                'message' => 'Expense deleted'
+            ]);
+        }
+
+        return response()->json([
+            'message' => 'Expense not found'
+        ], 404);
+    }
 }

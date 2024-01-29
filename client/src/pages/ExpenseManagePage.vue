@@ -77,10 +77,19 @@ export default defineComponent({
   },
   methods: {
     onSubmit() {
-      const router = useRouter();
-      axiosInstance.post('/expenses', this.form)
+      let requestType = 'post';
+      let url = '/expenses';
+
+      if(this.$route.params.id){
+        requestType = 'put';
+        url = `/expenses/${this.$route.params.id}`;
+      }
+
+      this.form.date = moment(this.form.date, 'DD/MM/YYYY').format('YYYY-MM-DD');
+
+      axiosInstance[requestType](url, this.form)
         .then(() => {
-          alert('Despesa criada com sucesso');
+          alert('Sucesso');
           location='/expenses'
         })
         .catch((err) => {
@@ -95,6 +104,7 @@ export default defineComponent({
         date: new Date(),
         type: '',
       }
+      location='/expenses/create'
     },
     formatCurrency(value) {
       return new Intl.NumberFormat('pt-BR', {
@@ -111,6 +121,7 @@ export default defineComponent({
   },
   mounted() {
     const id = this.$route.params.id;
+
     if (id) {
       axiosInstance.get(`/expenses/${id}`)
         .then((res) => {

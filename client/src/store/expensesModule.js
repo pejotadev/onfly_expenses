@@ -25,8 +25,16 @@ const expensesModule = {
     async fetchExpenses({ commit }) {
       try {
         const expenses = await expensesService.fetchExpenses();
-        console.log(expenses);
         commit('setExpenses', expenses);
+      } catch (error) {
+        // Tratar erro
+        console.log(error);
+      }
+    },
+    async deleteExpense({ commit }, expenseId) {
+      try {
+        await expensesService.deleteExpense(expenseId);
+        commit('removeExpense', expenseId);
       } catch (error) {
         // Tratar erro
         console.log(error);

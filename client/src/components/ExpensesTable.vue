@@ -25,7 +25,7 @@
             <q-btn
               class="text-negative"
               icon="delete"
-              :to="`/expenses/${props.row.id}`"
+              @click="deleteExpense(props.row.id)"
             />
           </q-btn-group>
         </q-td>
@@ -65,6 +65,16 @@ export default {
 
       ]
     };
+  },
+  methods: {
+    deleteExpense(id) {
+      const validation = confirm('Are you sure you want to delete this expense?')
+
+      if(validation){
+        this.$store.dispatch('expensesModule/deleteExpense', id);
+      }
+
+    }
   }
 }
 </script>
