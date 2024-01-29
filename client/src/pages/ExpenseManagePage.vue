@@ -2,35 +2,41 @@
   <q-page padding>
     <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
 
-      <q-input
-        v-model="form.description"
-        label="Description"
-        :rules="[val => !!val || 'Description is required']"
-      />
+      <div class="row">
+        <div>
+          <q-date
+            v-model="form.date"
+            label="Date"
+            :rules="[val => !!val || 'Date is required']"
+          />
+        </div>
 
-      <q-input
-        v-model="formattedValue"
-        label="Value"
-        :rules="currencyRules"
-      />
+        <div class="col q-pa-sm">
+          <q-input
+            v-model="form.description"
+            label="Description"
+            :rules="[val => !!val || 'Description is required']"
+          />
 
-      <q-select
-        v-model="form.type"
-        :options="types"
-        label="Type"
-        :rules="[val => !!val || 'Type is required']"
-      />
+          <q-input
+            v-model="formattedValue"
+            label="Value"
+            :rules="currencyRules"
+          />
 
-      <q-date
-        v-model="form.date"
-        label="Date"
-        :rules="[val => !!val || 'Date is required']"
-      />
-
+          <q-select
+            v-model="form.type"
+            :options="types"
+            label="Type"
+            :rules="[val => !!val || 'Type is required']"
+          />
+        </div>
+      </div>
       <div>
         <q-btn label="Submit" type="submit" color="primary" />
         <q-btn label="Reset" type="reset" color="secondary" class="q-ml-sm"/>
       </div>
+
     </q-form>
   </q-page>
 
