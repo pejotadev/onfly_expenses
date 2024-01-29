@@ -32,9 +32,39 @@ Este projeto consiste em uma API Rest desenvolvida com Laravel e um frontend uti
 
 A documentação detalhada é essencial para o entendimento e uso eficiente da API e do frontend.
 
----
-
 **Nota**: Esta documentacao ainda esta incompleta
+
+## Como iniciar o projeto
+
+A documentação de como iniciar o server e o client esta nos seus respectivos **readme.md**
+
+## Testes
+
+```
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true
+
+   PASS  Tests\Feature\ExampleTest
+  ✓ the application returns a successful response                                                   0.07s
+
+   PASS  Tests\Feature\ExpensesTest
+  ✓ create user                                                                                     0.05s
+  ✓ get auth                                                                                        0.01s
+  ✓ create expense                                                                                  0.01s
+  ✓ get expenses                                                                                    0.01s
+  ✓ delete user                                                                                     0.01s
+
+   PASS  Tests\Feature\UserTest
+  ✓ create user                                                                                     0.01s
+  ✓ get auth                                                                                        0.01s
+  ✓ get user                                                                                        0.02s
+  ✓ delete user                                                                                     0.01s
+
+  Tests:    11 passed (17 assertions)
+  Duration: 0.27s
+```
+
+## Estrutura de Pastas
 
 ```bash
 |___server
