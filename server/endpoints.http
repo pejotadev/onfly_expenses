@@ -1,5 +1,5 @@
 @url = http://127.0.0.1:8000
-@token = 16|7iakPpgoydsCf5fopc8DGQt5UfZgAuSSdA62nx651c0278c7
+@token = 35|FqtkEjTQWhmFXsHWw99jbnhLa1FWW5JKEiqdyQtz44276439
 ### Health Check
 get {{url}}/api/health
 Accept: application/json
@@ -22,7 +22,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "email": "emailteste@email.com",
+    "email": "john@rony.com",
     "password": "123456"
 }
 
@@ -45,7 +45,7 @@ Authorization: Bearer {{token}}
 
 {
     "description": "Expense test request",
-    "value": 150,
+    "value": 100,
     "date": "2024-01-27",
     "type": "fly"
 }

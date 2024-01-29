@@ -62,6 +62,30 @@ class ExpensesTest extends TestCase
         $response->assertStatus(201);
     }
 
+    /**
+     *  Get expenses test.
+     */
+    public function test_get_expenses(): void
+    {
+        $this->test_get_auth();
+
+        $response = $this->getJson('/api/expenses', [
+            'Authorization' => 'Bearer ' . $this->token
+        ]);
+
+        $response->assertStatus(200);
+
+        $response = json_decode($response->getContent());
+
+        $this->assertIsArray($response->expenses);
+    }
+
+
+
+
+
+
+
 
     /**
      *  Delete user test.

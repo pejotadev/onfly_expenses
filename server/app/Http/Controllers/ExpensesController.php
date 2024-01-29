@@ -39,4 +39,36 @@ class ExpensesController extends Controller
             'expense' => $expense
         ], 201);
     }
+
+    public function show($id)
+    {
+        $expense = Expenses::find($id);
+
+        if ($expense) {
+            return response()->json([
+                'expense' => $expense
+            ]);
+        }
+
+        return response()->json([
+            'message' => 'Expense not found'
+        ], 404);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $expense = Expenses::find($id);
+
+        if ($expense) {
+            $expense->update($request->all());
+
+            return response()->json([
+                'expense' => $expense
+            ]);
+        }
+
+        return response()->json([
+            'message' => 'Expense not found'
+        ], 404);
+    }
 }
