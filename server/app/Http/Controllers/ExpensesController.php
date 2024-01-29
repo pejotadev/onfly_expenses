@@ -43,6 +43,7 @@ class ExpensesController extends Controller
     public function show($id)
     {
         $expense = Expenses::find($id);
+        $this->authorize('view', $expense);
 
         if ($expense) {
             return response()->json([
@@ -58,6 +59,8 @@ class ExpensesController extends Controller
     public function update(Request $request, $id)
     {
         $expense = Expenses::find($id);
+
+        $this->authorize('update', $expense);
 
         if ($expense) {
             $expense->update($request->all());
