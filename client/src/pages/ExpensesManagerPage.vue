@@ -2,7 +2,6 @@
   <q-layout>
     <q-page-container>
       <q-page>
-        {{ expenses }}
         <expenses-table :expenses="expenses" @refresh="fetchExpenses"/>
       </q-page>
     </q-page-container>
