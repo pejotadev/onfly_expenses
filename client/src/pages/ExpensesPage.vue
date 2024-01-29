@@ -13,7 +13,7 @@ import ExpensesTable from 'components/ExpensesTable.vue';
 import { mapActions, mapState } from 'vuex';
 
 export default {
-  name: 'ExpensesManagerPage',
+  name: 'ExpensesPage',
 
   components: {
     ExpensesTable

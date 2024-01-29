@@ -31,6 +31,7 @@
 <script>
 import { defineComponent, ref } from 'vue';
 import axiosInstance from 'src/axios.js';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   name: 'LoginPage',

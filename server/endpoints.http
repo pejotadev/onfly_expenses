@@ -51,5 +51,5 @@ Authorization: Bearer {{token}}
 }
 
 ### get Expense
-get {{url}}/api/expenses
+get {{url}}/api/expenses/22
 Authorization: Bearer {{token}}
