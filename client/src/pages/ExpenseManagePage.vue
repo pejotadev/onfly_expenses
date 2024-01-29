@@ -85,7 +85,8 @@ export default defineComponent({
         url = `/expenses/${this.$route.params.id}`;
       }
 
-      this.form.date = moment(this.form.date, 'DD/MM/YYYY').format('YYYY-MM-DD');
+      this.form.date = moment(this.form.date);
+      this.form.date = this.form.date.format('YYYY-MM-DD')
 
       axiosInstance[requestType](url, this.form)
         .then(() => {
@@ -96,6 +97,8 @@ export default defineComponent({
           console.log(err);
           alert( err.response.data.message)
         });
+
+        
     },
     onReset() {
       this.form = {

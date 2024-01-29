@@ -52,12 +52,6 @@ export default {
         {
           name: 'actions',
           label: 'Ações',
-          format: (val, row) => {
-            return [
-              { icon: 'edit', label: 'Editar', to: `/expenses/${row.id}/edit` },
-              { icon: 'delete', label: 'Excluir', to: `/expenses/${row.id}/delete` }
-            ]
-          },
           sortable: false,
           align: 'center',
           style: 'width: 100px'
