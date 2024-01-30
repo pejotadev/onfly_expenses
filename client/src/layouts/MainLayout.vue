@@ -20,6 +20,7 @@
     </q-header>
 
     <q-drawer
+      v-if="token"
       v-model="leftDrawerOpen"
       show-if-above
       bordered
@@ -35,9 +36,27 @@
           <q-item-label
             header
             lines="1"
+            onclick="location='/'"
+            class="cursor-pointer q-hoverable"
+          >
+            Dashboard
+          </q-item-label>
+          <q-item-label
+            header
+            lines="1"
             onclick="location='/expenses'"
+            class="cursor-pointer q-hoverable"
           >
             Expenses
+          </q-item-label>
+
+          <q-item-label
+            header
+            lines="1"
+            @click="logout"
+            class="cursor-pointer q-hoverable"
+          >
+            Logout
           </q-item-label>
         </q-item-section>
 
@@ -61,7 +80,14 @@ export default defineComponent({
   setup () {
     const leftDrawerOpen = ref(false)
 
+    const token = localStorage.getItem('token')
+
     return {
+      token,
+      logout () {
+        localStorage.removeItem('token')
+        location = '/login'
+      },
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value

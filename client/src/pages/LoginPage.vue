@@ -43,7 +43,7 @@ export default defineComponent({
       axiosInstance.post('/login', loginInfo.value)
         .then((res) => {
           localStorage.setItem('token', res.data.token);
-          router.push('/home');
+          router.push('/');
         })
         .catch((err) => {
           console.log(err);
