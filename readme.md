@@ -38,6 +38,279 @@ A documentação detalhada é essencial para o entendimento e uso eficiente da A
 
 A documentação de como iniciar o server e o client esta nos seus respectivos **readme.md**
 
+## API reference
+
+### POST /register
+
+```http
+  POST /api/register
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `param`   | `type`   | **Required**. Description |
+
+#### Result
+```code
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 23
+ETag: W/"17-4nF6ICodSzi3RHNfgXPMRFtuCUU"
+Date: Sat, 20 Jan 2024 23:11:01 GMT
+Connection: close
+
+{
+  "data": "Example data"
+}
+```
+
+
+### POST /login
+
+```http
+  POST /api/login
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `param`   | `type`   | **Required**. Description |
+
+#### Result
+```code
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 23
+ETag: W/"17-4nF6ICodSzi3RHNfgXPMRFtuCUU"
+Date: Sat, 20 Jan 2024 23:11:01 GMT
+Connection: close
+
+{
+  "data": "Example data"
+}
+```
+
+
+### GET /user
+
+```http
+  GET /api/user
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `param`   | `type`   | **Required**. Description |
+
+#### Result
+```code
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 23
+ETag: W/"17-4nF6ICodSzi3RHNfgXPMRFtuCUU"
+Date: Sat, 20 Jan 2024 23:11:01 GMT
+Connection: close
+
+{
+  "data": "Example data"
+}
+```
+
+
+### POST /user
+
+```http
+  POST /api/user
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `param`   | `type`   | **Required**. Description |
+
+#### Result
+```code
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 23
+ETag: W/"17-4nF6ICodSzi3RHNfgXPMRFtuCUU"
+Date: Sat, 20 Jan 2024 23:11:01 GMT
+Connection: close
+
+{
+  "data": "Example data"
+}
+```
+
+
+### PUT /user/{id}
+
+```http
+  PUT /api/user/{id}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `param`   | `type`   | **Required**. Description |
+
+#### Result
+```code
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 23
+ETag: W/"17-4nF6ICodSzi3RHNfgXPMRFtuCUU"
+Date: Sat, 20 Jan 2024 23:11:01 GMT
+Connection: close
+
+{
+  "data": "Example data"
+}
+```
+
+
+### DELETE /user/{id}
+
+```http
+  DELETE /api/user/{id}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `param`   | `type`   | **Required**. Description |
+
+#### Result
+```code
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 23
+ETag: W/"17-4nF6ICodSzi3RHNfgXPMRFtuCUU"
+Date: Sat, 20 Jan 2024 23:11:01 GMT
+Connection: close
+
+{
+  "data": "Example data"
+}
+```
+
+
+### GET /expenses
+
+```http
+  GET /api/expenses
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `param`   | `type`   | **Required**. Description |
+
+#### Result
+```code
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 23
+ETag: W/"17-4nF6ICodSzi3RHNfgXPMRFtuCUU"
+Date: Sat, 20 Jan 2024 23:11:01 GMT
+Connection: close
+
+{
+  "data": "Example data"
+}
+```
+
+
+### POST /expenses
+
+```http
+  POST /api/expenses
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `param`   | `type`   | **Required**. Description |
+
+#### Result
+```code
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 23
+ETag: W/"17-4nF6ICodSzi3RHNfgXPMRFtuCUU"
+Date: Sat, 20 Jan 2024 23:11:01 GMT
+Connection: close
+
+{
+  "data": "Example data"
+}
+```
+
+
+### PUT /expenses/{id}
+
+```http
+  PUT /api/expenses/{id}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `param`   | `type`   | **Required**. Description |
+
+#### Result
+```code
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 23
+ETag: W/"17-4nF6ICodSzi3RHNfgXPMRFtuCUU"
+Date: Sat, 20 Jan 2024 23:11:01 GMT
+Connection: close
+
+{
+  "data": "Example data"
+}
+```
+
+
+### DELETE /expenses/{id}
+
+```http
+  DELETE /api/expenses/{id}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `param`   | `type`   | **Required**. Description |
+
+#### Result
+```code
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 23
+ETag: W/"17-4nF6ICodSzi3RHNfgXPMRFtuCUU"
+Date: Sat, 20 Jan 2024 23:11:01 GMT
+Connection: close
+
+{
+  "data": "Example data"
+}
+```
+
+
+
 ## Testes
 
 ```
