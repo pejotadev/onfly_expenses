@@ -16,7 +16,7 @@ Este projeto consiste em uma API Rest desenvolvida com Laravel e um frontend uti
 
 ### Frontend (Quasar Vue 3)
 
-- **Gestão de Usuários**: Interface para gerenciamento de usuários utilizando a API.
+- **Gestão de Despesas**: Interface para gerenciamento de despesas utilizando a API.
 
 ## Boas Práticas e Padrões Utilizados
 
