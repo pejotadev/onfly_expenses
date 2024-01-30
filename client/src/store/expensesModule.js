@@ -4,14 +4,14 @@ const expensesModule = {
   namespaced: true,
   state: {
     expenses: [],
-    expensesPerType: []
+    expensesPerType: [],
+    expensesPerMonth: []
   },
   mutations: {
     setExpenses(state, expenses) {
       state.expenses = expenses;
 
       const result = {};
-
       expenses.forEach(item => {
         // Converte o valor para número, pois está em formato de string
         const value = parseFloat(item.value);
@@ -22,9 +22,24 @@ const expensesModule = {
         } else {
             result[item.type] = value;
         }
-    });
-
+      });
       state.expensesPerType = Object.keys(result).map(type => ({ type, value: result[type] }));
+
+      const result2 = {};
+      expenses.forEach(item => {
+        const date = new Date(item.date);
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        const key = `${month}/${year}`;
+
+        if (result2[key]) {
+          result2[key] += +item.value;
+        } else {
+          result2[key] = +item.value;
+        }
+      });
+      state.expensesPerMonth = Object.keys(result2).map(key => ({ date: key, value: result2[key] }));
+
     },
     addExpense(state, expense) {
       state.expenses.push(expense);

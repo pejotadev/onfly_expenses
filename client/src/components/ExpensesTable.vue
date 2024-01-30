@@ -10,7 +10,7 @@
     <template v-slot:top-left>
       <q-btn color="primary" label="Adicionar" to="/expenses/create" />
     </template>
-    
+
     <template v-slot:top-right>
       <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
         <template v-slot:append>
